@@ -24,7 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = mysqli_stmt_get_result($stmt);
         $user = mysqli_fetch_assoc($result);
 
-        if ($user && password_verify($password, $user['password'])) {
+        $password_matches = $user && password_verify($password, $user['password']);
+
+        // The SQL file includes a plain default password to keep setup simple.
+        // After the first successful login, it is replaced with a secure hash.
+        if ($user && !$password_matches && $password === $user['password']) {
+            $new_hash = password_hash($password, PASSWORD_DEFAULT);
+            $update_sql = 'UPDATE users SET password = ? WHERE id = ?';
+            $update_stmt = mysqli_prepare($conn, $update_sql);
+            mysqli_stmt_bind_param($update_stmt, 'si', $new_hash, $user['id']);
+            mysqli_stmt_execute($update_stmt);
+            $password_matches = true;
+        }
+
+        if ($user && $password_matches) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header('Location: dashboard.php');
