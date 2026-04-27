@@ -323,6 +323,11 @@ textarea {
     max-width: 680px;
 }
 
+.centered-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .form-actions {
     margin-top: 18px;
 }

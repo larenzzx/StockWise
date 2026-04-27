@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box form-card narrow">
+<section class="box form-card narrow centered-form">
     <h2>Edit Product</h2>
     <p>Update product details and save the changes to the inventory list.</p>
     <?php if ($error !== '') : ?>

@@ -5,7 +5,7 @@ include 'includes/header.php';
 
 <section class="box page-heading">
     <h2>About</h2>
-    <p>StockWise Inventory is a beginner-friendly PHP and MySQL system for tracking product records and stock levels.</p>
+    <p>StockWise Inventory is a simple system for organizing products, monitoring stock levels, and keeping inventory records easy to manage.</p>
 </section>
 
 <section class="grid two">
@@ -15,7 +15,7 @@ include 'includes/header.php';
     </article>
     <article class="box">
         <h3>Target Users</h3>
-        <p>This app is designed for small shops, school projects, startup sellers, and beginner developers who need a practical inventory example built with plain PHP, HTML, CSS, and MySQL.</p>
+        <p>This app is designed for small shops, startup sellers, and teams that need a clear way to track products, quantities, prices, and stock status.</p>
     </article>
 </section>
 
@@ -26,7 +26,7 @@ include 'includes/header.php';
         <li>Reduces manual checking of product lists</li>
         <li>Highlights low and out-of-stock items</li>
         <li>Keeps product pricing and quantities organized</li>
-        <li>Uses straightforward code that can be customized</li>
+        <li>Supports faster decisions when restocking products</li>
     </ul>
 </section>
 

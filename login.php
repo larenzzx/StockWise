@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box form-card narrow">
+<section class="box form-card narrow centered-form">
     <h2>Login</h2>
     <p>Sign in to access the dashboard and manage product records.</p>
     <?php if ($error !== '') : ?>

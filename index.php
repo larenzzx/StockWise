@@ -5,7 +5,7 @@ include 'includes/header.php';
 
 <section class="hero">
     <div>
-        <p class="eyebrow">Simple PHP Inventory Management</p>
+        <p class="eyebrow">Inventory Management Made Clear</p>
         <h2>Track products, stock levels, and inventory value in one clean workspace.</h2>
         <p>StockWise helps small teams organize products, monitor low stock, and keep product records easy to find without complicated software.</p>
         <div class="hero-actions">
@@ -14,6 +14,7 @@ include 'includes/header.php';
                 <a class="button secondary" href="products.php">View Products</a>
             <?php else : ?>
                 <a class="button" href="login.php">Login to Manage Inventory</a>
+                <a class="button secondary" href="register.php">Create Account</a>
                 <a class="button secondary" href="#features">View Features</a>
             <?php endif; ?>
         </div>
@@ -44,8 +45,8 @@ include 'includes/header.php';
         <p>Keep product details in one searchable list instead of scattered notes, paper sheets, or spreadsheets.</p>
     </article>
     <article class="box feature-card">
-        <h3>Beginner Friendly</h3>
-        <p>The app uses pure PHP, MySQL, HTML, and CSS so it stays easy to understand, edit, and extend.</p>
+        <h3>Faster Daily Updates</h3>
+        <p>Add new items, adjust quantities, and review product details quickly so inventory records stay current.</p>
     </article>
 </section>
 
@@ -58,6 +59,7 @@ include 'includes/header.php';
         <a class="button" href="dashboard.php">Open Dashboard</a>
     <?php else : ?>
         <a class="button" href="login.php">Login</a>
+        <a class="button secondary" href="register.php">Register</a>
     <?php endif; ?>
 </section>
 

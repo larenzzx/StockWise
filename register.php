@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box form-card narrow">
+<section class="box form-card narrow centered-form">
     <h2>Register</h2>
     <p>Create an account so you can log in and manage inventory products.</p>
 

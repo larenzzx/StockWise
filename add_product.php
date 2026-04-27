@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box form-card narrow">
+<section class="box form-card narrow centered-form">
     <h2>Add Product</h2>
     <p>Enter the product details below. Quantity and price must be zero or higher.</p>
     <?php if ($error !== '') : ?>
