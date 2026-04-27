@@ -73,7 +73,7 @@ include 'includes/header.php';
     </article>
     <article class="summary-card success">
         <span>Total Inventory Value</span>
-        <strong>$<?php echo number_format((float) $inventory_value, 2); ?></strong>
+        <strong>PHP <?php echo number_format((float) $inventory_value, 2); ?></strong>
     </article>
 </section>
 
@@ -105,7 +105,7 @@ include 'includes/header.php';
                             <td data-label="Product Name"><?php echo htmlspecialchars($product['product_name']); ?></td>
                             <td data-label="Category"><?php echo htmlspecialchars($product['category']); ?></td>
                             <td data-label="Quantity"><?php echo (int) $product['quantity']; ?></td>
-                            <td data-label="Price">$<?php echo number_format((float) $product['price'], 2); ?></td>
+                            <td data-label="Price">PHP <?php echo number_format((float) $product['price'], 2); ?></td>
                             <td data-label="Status"><span class="status <?php echo $status_class; ?>"><?php echo $status_text; ?></span></td>
                         </tr>
                     <?php endwhile; ?>

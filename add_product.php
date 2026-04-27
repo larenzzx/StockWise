@@ -61,7 +61,7 @@ include 'includes/header.php';
         <label for="quantity">Quantity</label>
         <input type="number" id="quantity" name="quantity" min="0" value="<?php echo htmlspecialchars($quantity); ?>">
 
-        <label for="price">Price</label>
+        <label for="price">Price (PHP)</label>
         <input type="number" id="price" name="price" min="0" step="0.01" value="<?php echo htmlspecialchars($price); ?>">
 
         <label for="date_added">Date Added</label>

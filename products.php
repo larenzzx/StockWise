@@ -75,7 +75,7 @@ include 'includes/header.php';
                         <td data-label="Product Name"><?php echo htmlspecialchars($product['product_name']); ?></td>
                         <td data-label="Category"><?php echo htmlspecialchars($product['category']); ?></td>
                         <td data-label="Quantity"><?php echo (int) $product['quantity']; ?></td>
-                        <td data-label="Price">$<?php echo number_format((float) $product['price'], 2); ?></td>
+                        <td data-label="Price">PHP <?php echo number_format((float) $product['price'], 2); ?></td>
                         <td data-label="Date Added"><?php echo htmlspecialchars($product['date_added']); ?></td>
                         <td data-label="Status"><span class="status <?php echo $status_class; ?>"><?php echo $status_text; ?></span></td>
                         <td data-label="Actions">
