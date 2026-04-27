@@ -62,8 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box">
+<section class="box form-card narrow">
     <h2>Edit Product</h2>
+    <p>Update product details and save the changes to the inventory list.</p>
     <?php if ($error !== '') : ?>
         <div class="message error"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
@@ -84,8 +85,10 @@ include 'includes/header.php';
         <label for="date_added">Date Added</label>
         <input type="date" id="date_added" name="date_added" value="<?php echo htmlspecialchars($date_added); ?>">
 
-        <button type="submit">Update Product</button>
-        <a class="button" href="products.php">Cancel</a>
+        <div class="form-actions">
+            <button type="submit">Update Product</button>
+            <a class="button secondary" href="products.php">Cancel</a>
+        </div>
     </form>
 </section>
 

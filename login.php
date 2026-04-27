@@ -51,8 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box">
+<section class="box form-card narrow">
     <h2>Login</h2>
+    <p>Sign in to access the dashboard and manage product records.</p>
     <?php if ($error !== '') : ?>
         <div class="message error"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
@@ -64,9 +65,12 @@ include 'includes/header.php';
         <label for="password">Password</label>
         <input type="password" id="password" name="password">
 
-        <button type="submit">Login</button>
+        <div class="form-actions">
+            <button type="submit">Login</button>
+        </div>
     </form>
-    <p>Default account: <strong>admin</strong> / <strong>admin123</strong></p>
+    <p class="help-text">Default account: <strong>admin</strong> / <strong>admin123</strong></p>
+    <p>New user? <a href="register.php">Create an account</a>.</p>
 </section>
 
 <?php include 'includes/footer.php'; ?>

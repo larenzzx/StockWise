@@ -35,55 +35,64 @@ include 'includes/header.php';
 ?>
 
 <section class="box">
-    <h2>Products</h2>
+    <div class="section-title-row">
+        <div>
+            <h2>Products</h2>
+            <p>Search, review, and maintain inventory product records.</p>
+        </div>
+        <a class="button" href="add_product.php">Add Product</a>
+    </div>
 
     <?php if ($message !== '') : ?>
         <div class="message success"><?php echo htmlspecialchars($message); ?></div>
     <?php endif; ?>
 
-    <form method="get" action="products.php" class="actions">
+    <form method="get" action="products.php" class="search-form">
         <input type="text" name="search" placeholder="Search by product or category" value="<?php echo htmlspecialchars($search); ?>">
         <button type="submit">Search</button>
-        <a class="button" href="products.php">Clear</a>
-        <a class="button" href="add_product.php">Add Product</a>
+        <a class="button secondary" href="products.php">Clear</a>
     </form>
 </section>
 
-<table>
-    <thead>
-        <tr>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Date Added</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if (mysqli_num_rows($products) > 0) : ?>
-            <?php while ($product = mysqli_fetch_assoc($products)) : ?>
-                <?php [$status_text, $status_class] = stock_status($product['quantity']); ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($product['product_name']); ?></td>
-                    <td><?php echo htmlspecialchars($product['category']); ?></td>
-                    <td><?php echo (int) $product['quantity']; ?></td>
-                    <td>$<?php echo number_format((float) $product['price'], 2); ?></td>
-                    <td><?php echo htmlspecialchars($product['date_added']); ?></td>
-                    <td><span class="status <?php echo $status_class; ?>"><?php echo $status_text; ?></span></td>
-                    <td class="actions">
-                        <a class="button" href="edit_product.php?id=<?php echo $product['id']; ?>">Edit</a>
-                        <a class="button danger" href="delete_product.php?id=<?php echo $product['id']; ?>" onclick="return confirm('Delete this product?');">Delete</a>
-                    </td>
-                </tr>
-            <?php endwhile; ?>
-        <?php else : ?>
+<div class="table-wrap">
+    <table>
+        <thead>
             <tr>
-                <td colspan="7">No products found.</td>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Date Added</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
-        <?php endif; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php if (mysqli_num_rows($products) > 0) : ?>
+                <?php while ($product = mysqli_fetch_assoc($products)) : ?>
+                    <?php [$status_text, $status_class] = stock_status($product['quantity']); ?>
+                    <tr>
+                        <td data-label="Product Name"><?php echo htmlspecialchars($product['product_name']); ?></td>
+                        <td data-label="Category"><?php echo htmlspecialchars($product['category']); ?></td>
+                        <td data-label="Quantity"><?php echo (int) $product['quantity']; ?></td>
+                        <td data-label="Price">$<?php echo number_format((float) $product['price'], 2); ?></td>
+                        <td data-label="Date Added"><?php echo htmlspecialchars($product['date_added']); ?></td>
+                        <td data-label="Status"><span class="status <?php echo $status_class; ?>"><?php echo $status_text; ?></span></td>
+                        <td data-label="Actions">
+                            <div class="actions compact">
+                                <a class="button small" href="edit_product.php?id=<?php echo $product['id']; ?>">Edit</a>
+                                <a class="button danger small" href="delete_product.php?id=<?php echo $product['id']; ?>" onclick="return confirm('Delete this product?');">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <tr>
+                    <td colspan="7">No products found.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
 
 <?php include 'includes/footer.php'; ?>

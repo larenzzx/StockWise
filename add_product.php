@@ -44,8 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 ?>
 
-<section class="box">
+<section class="box form-card narrow">
     <h2>Add Product</h2>
+    <p>Enter the product details below. Quantity and price must be zero or higher.</p>
     <?php if ($error !== '') : ?>
         <div class="message error"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
@@ -66,7 +67,10 @@ include 'includes/header.php';
         <label for="date_added">Date Added</label>
         <input type="date" id="date_added" name="date_added" value="<?php echo htmlspecialchars($date_added); ?>">
 
-        <button type="submit">Add Product</button>
+        <div class="form-actions">
+            <button type="submit">Add Product</button>
+            <a class="button secondary" href="products.php">Cancel</a>
+        </div>
     </form>
 </section>
 
